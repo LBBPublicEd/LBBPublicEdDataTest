@@ -1,8 +1,32 @@
-Use the data to find the cost of the new allotment by editing the code below. 
-f_yr = 2022
-l_yr = 2028
+#Use the data to find the cost of the new allotment by editing the code below. You will need to do the following:
+# 1. open the sas file "lefty" as pandas dataframe
+# 2. open each the "dist" csv files as a pandas dataframe
+# 3. merge lefty to each dist dataframes on cntydist in the loop
+# 4. read the scenario and create a new dataframe foe each year with the variables: cntydist and a new one, "lefty_allot" that gives the cost per cntydist 
+#     based on the bill
+#
+#Scenario: You are assigned to HB68. The bill would allot money to districts for their left-handed students so the district can pay for left-
+# handed equipment. The bill would take effect in fiscal year 2022. Each year, for each left handed student, a district will be given $125. 
+# The bill also limits the total state cost to $100,000 every year. If giving $125 per left-handed student exceeds the limit of $100,000, each 
+# district's allotment will be reduced proportionally until the amount equals $100,000. In fiscal year 2025 and every year after the district will 
+# given $100 per lefty, but there will be no statewide limit.
+#
+#We are only given left-handed population in each district for one year. We decide to tie left-handed population growth the district's 
+# enrollment growth or "enroll". So if a district grows by 5% from 2022 to 2023 then the left-handed population should grow accordingly.
+#
 
-dist = "district file path" #write as a sasfile
+
+import pandas as pd
+
+f_yr = 2022
+l_yr = 2026
+
+dist22 = "district file path" #write as a sasfile
+dist23 = ""
+dist24 = ""
+dist25 = ""
+dist26 = ""
+
 lefty = "lefty data filepath"
 
 # This for loopgenerates dataframes from l_yr to f_yr       
@@ -14,6 +38,6 @@ for loopyr in range(f_yr, l_yr+1):
     lag6  = str(loopyr - 6)[-2:]                                                                   
     adv   = str(loopyr + 1)[-2:] #  base file  
     
-    if loopyr == 2022:
+    
       
       
