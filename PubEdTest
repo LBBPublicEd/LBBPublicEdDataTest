@@ -1,0 +1,19 @@
+Use the data to find the cost of the new allotment by editing the code below. 
+f_yr = 2022
+l_yr = 2028
+
+dist = "district file path" #write as a sasfile
+lefty = "lefty data filepath"
+
+# This for loopgenerates dataframes from l_yr to f_yr       
+for loopyr in range(f_yr, l_yr+1):
+    yr = str(loopyr)[-2:]                                                                           
+    lag   = str(loopyr - 1)[-2:]                                                                    
+    lagg  = str(loopyr - 2)[-2:]                                                        
+    laggg  = str(loopyr - 3)[-2:]
+    lag6  = str(loopyr - 6)[-2:]                                                                   
+    adv   = str(loopyr + 1)[-2:] #  base file  
+    
+    if loopyr == 2022:
+      
+      
